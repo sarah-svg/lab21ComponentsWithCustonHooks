@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { allCharacters, characterById } from '../Servicers/AirbenderApi';
 
+
 export const useCharacters = () => {
   const [loading, loaded] = useState(true);
   const [characters, setCharacters] = useState([]);
