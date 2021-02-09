@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { allCharacters } from '../Servicers/AirbenderApi';
+import { allCharacters, characterById } from '../Servicers/AirbenderApi';
 
 export const useCharacters = () => {
   const [loading, loaded] = useState(true);
@@ -18,3 +18,21 @@ export const useCharacters = () => {
     characters
   };
 };
+
+export const useById = id => {
+  const [loading, loaded] = useState(true);
+  const [character, setCharacters] = useState(null);
+  useEffect(() => {
+    characterById()
+      .then(character => {
+        setCharacters(character);
+        loaded(false);
+      });
+  }, [id]);
+    
+  return {
+    loading,
+    character
+  };
+};
+
