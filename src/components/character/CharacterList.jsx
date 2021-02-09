@@ -9,7 +9,7 @@ function CharacterList({ characters }) {
     
     {
       return (
-        <Link to={`/character/${character.id}`} 
+        <Link to={`/characters/${character.id}`} 
           key={character.id}
           style={{ textDecoration: 'none', color: 'green' }}>
           <li style={{ listStyleType: 'none' }}>

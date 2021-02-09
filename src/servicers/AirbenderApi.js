@@ -9,7 +9,7 @@ export const allCharacters = () => {
       url: character.photoUrl,
     })));
 };
-export const characterById = () => {
+export const characterById = (id) => {
   return fetch(`https://last-airbender-api.herokuapp.com/api/v1/characters/${id}`)
     .then(res => res.json());
 };
