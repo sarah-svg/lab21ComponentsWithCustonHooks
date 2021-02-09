@@ -1,12 +1,19 @@
 import React from 'react';
+import { useEffect } from 'react';
+import CharacterList from '../components/character/CharacterList';
+import { useCharacters } from '../hooks/character';
+import Loading from '../loading/Loading';
 
-function AllCharacters() {
-  return (
-    <div>
-            hey from containor for all AllCharacters
-    </div>
-  );
-}
+
+
+
+
+const AllCharacters = () => {
+  const { loading, characters } = useCharacters();
+
+  if(loading) return <Loading />;
+  return <CharacterList characters={characters}/>;
+};
 
 export default AllCharacters;
 

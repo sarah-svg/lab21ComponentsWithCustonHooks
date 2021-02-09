@@ -6,7 +6,7 @@ export const allCharacters = () => {
     .then(characters => characters.map(character => ({
       id: character._id,
       name: character.name,
-      url: character.photourl,
+      url: character.photoUrl,
     })));
 };
 export const characterById = () => {
