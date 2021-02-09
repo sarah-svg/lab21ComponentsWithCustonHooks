@@ -20,13 +20,13 @@ export const useCharacters = () => {
 };
 
 export const useById = id => {
-  const [loading, loaded] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [character, setCharacters] = useState(null);
   useEffect(() => {
-    characterById()
+    characterById(id)
       .then(character => {
         setCharacters(character);
-        loaded(false);
+        setLoading(false);
       });
   }, [id]);
     

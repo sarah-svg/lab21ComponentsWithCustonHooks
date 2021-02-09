@@ -5,7 +5,7 @@ function CharacterDetails({ name, photoUrl, allies, enemies, affiliation }) {
   return (
     <div>
       <figure>
-        <figcaption>{name}</figcaption>
+        <figcaption data-testid="name">{name}</figcaption>
         <img src={photoUrl}/>
       </figure>
       <ul>
