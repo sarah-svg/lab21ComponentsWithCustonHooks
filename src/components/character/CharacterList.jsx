@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import OneCharacter from './OneCharacter';
 
-function CharacterList({ character }) {
-  const list = character.map(character => (
+function CharacterList({ characters }) {
+  const list = characters.map(character => (
     <div key={character.id}>
       <Link to={character.id}>
         <OneCharacter {...character}/>
@@ -19,7 +19,7 @@ function CharacterList({ character }) {
 }
 
 CharacterList.propTypes = {
-  character: PropTypes.array(PropTypes.shape({
+  characters: PropTypes.array(PropTypes.shape({
     name: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired
   })).isRequired
