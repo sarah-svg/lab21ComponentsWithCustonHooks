@@ -23,6 +23,9 @@ describe('Character Page', () => {
       </MemoryRouter>);
     screen.getAllByText('Loading...');
 
+   
+   
+   
     const name = await screen.findByTestId('name');
 
     return waitFor(() => {
