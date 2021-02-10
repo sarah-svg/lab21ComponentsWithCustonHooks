@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character Page creates a snapshot test of the character containor 1`] = `
+<DocumentFragment>
+  Loading...
+  <iframe
+    allowfullscreen=""
+    alt="Loading..."
+    class="giphy-embed"
+    frameborder="0"
+    height="240"
+    src="https://giphy.com/embed/igDPjtNl8ugFy"
+    width="240"
+  />
+  <p>
+    <a
+      alt="Loading..."
+      href="https://giphy.com/gifs/thecurrentsea-the-current-sea-thecurrentseala-igDPjtNl8ugFy"
+    >
+      via GIPHY
+    </a>
+  </p>
+</DocumentFragment>
+`;
