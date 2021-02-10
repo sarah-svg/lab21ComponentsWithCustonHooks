@@ -13,7 +13,6 @@ export const useCharacters = () => {
         loaded(false);
       });
   }, []);
-
   return {
     loading,
     characters
