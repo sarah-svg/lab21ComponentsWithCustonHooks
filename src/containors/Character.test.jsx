@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, cleanup } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
@@ -15,6 +15,7 @@ const server = setupServer(
 describe('Character Page', () => {
   beforeAll(() => server.listen());
   afterAll(() => server.close());
+  afterEach(() => cleanup());
   it('it displays the character id page', async() => {
     render(
       <MemoryRouter>
@@ -22,17 +23,18 @@ describe('Character Page', () => {
           match={{ params: { id: '5cf5679a915ecad153ab68d1' } }}/>
       </MemoryRouter>);
     screen.getAllByText('Loading...');
-
-   
-   
-   
     const name = await screen.findByTestId('name');
 
     return waitFor(() => {
       expect(name).not.toBeEmptyDOMElement();
     });
-
-
+  });
+  it('creates a snapshot test of the character containor', async() => {
+    const { asFragment } = render(<MemoryRouter>
+      <Character 
+        match={{ params: { id: '5cf5679a915ecad153ab68d1' } }}/>
+    </MemoryRouter>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
