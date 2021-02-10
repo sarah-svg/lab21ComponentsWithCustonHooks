@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { allCharacters, characterById } from '../Servicers/AirbenderApi';
+import { allCharacters, characterById } from '../servicers/AirbenderApi';
 
 
 export const useCharacters = () => {
