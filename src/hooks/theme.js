@@ -1,7 +1,5 @@
 /* eslint-disable no-unused-vars */
-
 import React, { useState, useEffect, createContext, useContext } from 'react';
-
 
 export const CharacterTheme = createContext(null);
 
@@ -15,7 +13,6 @@ export const NewTheme = ({ children }) => {
   );
 
 };
-
 
 export const useTheme = () => {
   const { theme, setTheme } = useContext(CharacterTheme);

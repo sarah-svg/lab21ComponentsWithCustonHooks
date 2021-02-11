@@ -2,9 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../hooks/theme';
-
 import styles from './header.css';
-
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
@@ -14,10 +12,7 @@ export default function Header() {
       setTheme('light');
     } else setTheme('dark');
   };
-  
   const themeStyle = theme === 'dark' ? styles.dark : styles.light;
- 
-
   return (
     <div className={themeStyle} >
       <h1  >Airbender Api</h1>

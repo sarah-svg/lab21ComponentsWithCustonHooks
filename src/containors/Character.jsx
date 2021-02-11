@@ -6,7 +6,6 @@ import CharacterDetails from '../components/character/CharacterDetails';
 
 const Character = ({ match }) => {
   const { loading, character } = useById(match.params.id);
-  
   if(loading) return <Loading />;
   return <CharacterDetails {...character} />;
 };
