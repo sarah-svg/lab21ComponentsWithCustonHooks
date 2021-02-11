@@ -2,13 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function OneCharacter({ name, url }) {
+
   return (
-    <figure>
-      <img src={url}/>
-      <figcaption>
-        {name}
-      </figcaption>    
-    </figure>
+    <div  >
+
+      <figure>
+        <img src={url}/>
+        <figcaption>
+          {name}
+        </figcaption>    
+      </figure>
+    </div>
   );
 }
 
