@@ -19,7 +19,7 @@ function CharacterList({ characters }) {
     
     {
       return (
-        <div className={themeStyle} >
+        <div className={themeStyle}  key={character.id}>
           <Link to={`/characters/${character.id}`} 
             key={character.id}
             style={{ textDecoration: 'none', color: 'green' }}>

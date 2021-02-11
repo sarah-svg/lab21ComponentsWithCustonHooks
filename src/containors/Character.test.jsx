@@ -5,6 +5,7 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import characterApi from '../fixtures/character.json';
 import Character from './Character';
+import { NewTheme } from '../hooks/theme';
 
 const server = setupServer(
   // eslint-disable-next-line max-len
@@ -18,10 +19,12 @@ describe('Character Page', () => {
   afterEach(() => cleanup());
   it('it displays the character id page', async() => {
     render(
-      <MemoryRouter>
-        <Character 
-          match={{ params: { id: '5cf5679a915ecad153ab68d1' } }}/>
-      </MemoryRouter>);
+      <NewTheme>
+        <MemoryRouter>
+          <Character 
+            match={{ params: { id: '5cf5679a915ecad153ab68d1' } }}/>
+        </MemoryRouter>
+      </NewTheme>);
     screen.getAllByText('Loading...');
     const name = await screen.findByTestId('name');
 
