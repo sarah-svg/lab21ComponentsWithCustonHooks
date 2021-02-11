@@ -19,8 +19,8 @@ export default function Header() {
  
 
   return (
-    <div >
-      <h1 className={themeStyle} >Airbender Api</h1>
+    <div className={themeStyle} >
+      <h1  >Airbender Api</h1>
       <Link to="/characters">List of all the characters</Link><br></br>
       <Link to="/">back to home</Link>
       <input type="checkbox" onChange={handleChange}></input>
